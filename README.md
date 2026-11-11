@@ -586,7 +586,7 @@ does it bury a lot of greasy surface" is genuinely most of the binding story. Vi
 is not a handicap there.
  
 **It does worst where the defining interaction is one it cannot see.** FEN1's active site is two
-magnesium ions. A real FEN1 inhibitor binds by chelating them — that is the pharmacophore. Vina
+magnesium ions. A real FEN1 inhibitor binds by chelating them, that is the pharmacophore. Vina
 has no electrostatic term, so it treats Mg²⁺ as a generic atom with a radius and no charge. The
 single most important interaction in the site is invisible to the scoring function, and FEN1 is
 the weakest of the four targets that worked (+2.35). The instructive part is what happened when I
@@ -598,13 +598,13 @@ complete physics applied to the wrong geometry.
 **ALDH1 sits in between, and for a structural reason.** Its substrate tunnel is long, narrow and
 open to solvent. Vina has no explicit water. In a deep enclosed pocket that omission is cheap,
 because displaced water is roughly constant across ligands and partly absorbed into the fitted
-weights. In a solvent-exposed tunnel it is not — how much ordered water a given ligand displaces
+weights. In a solvent-exposed tunnel it is not, how much ordered water a given ligand displaces
 varies ligand to ligand, and that variation is exactly the part Vina cannot model. ALDH1 lands
 mid-table (+4.13), which is about where you would expect a target whose binding is real but whose
 energetics are partly aqueous.
  
 **VDR is the most interesting failure, because it is not a structural failure at all.** The
-pocket is a textbook enclosed hydrophobic cavity — precisely the geometry Vina should handle
+pocket is a textbook enclosed hydrophobic cavity, precisely the geometry Vina should handle
 best. And it is the one target that scores below random. The explanation turned out to be
 arithmetic rather than physical: Vina's score accumulates over atom pairs, so larger molecules
 score better almost regardless of fit (r = −0.321 with heavy atom count). On most libraries that
@@ -635,7 +635,7 @@ at the chemical series you are screening and asking whether its failures are the
 structure could plausibly fix.
  
 And one caveat that applies to the whole thing: docking scores a binding event. On PKM2 the
-therapeutic goal is activation, not inhibition — the ligands worth finding are the ones that lock
+therapeutic goal is activation, not inhibition, the ligands worth finding are the ones that lock
 the enzyme in its active tetramer. Vina cannot distinguish an activator from an inhibitor from a
 tight-binding inert molecule. Enrichment here measures the ability to find binders. Whether those
 binders do the thing you want is a question for an assay.
@@ -684,5 +684,4 @@ Known traps, all of which cost me time:
 ---
  
 *Shivam Nichit · November 2026*
- 
-Claude finished the response
+
