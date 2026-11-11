@@ -1,0 +1,415 @@
+{
+  "part1_enrichment": [
+    {
+      "target": "PKM2",
+      "n": 5543,
+      "actives": 546,
+      "AUC": 0.633,
+      "logAUC": 7.2,
+      "EF1": 2.77,
+      "EF5": 2.24
+    },
+    {
+      "target": "MAPK1",
+      "n": 5298,
+      "actives": 308,
+      "AUC": 0.658,
+      "logAUC": 6.92,
+      "EF1": 0.99,
+      "EF5": 2.02
+    },
+    {
+      "target": "ALDH1",
+      "n": 5992,
+      "actives": 999,
+      "AUC": 0.574,
+      "logAUC": 4.13,
+      "EF1": 2.03,
+      "EF5": 1.62
+    },
+    {
+      "target": "FEN1",
+      "n": 5368,
+      "actives": 369,
+      "AUC": 0.553,
+      "logAUC": 2.35,
+      "EF1": 0.82,
+      "EF5": 1.36
+    },
+    {
+      "target": "VDR",
+      "n": 5882,
+      "actives": 882,
+      "AUC": 0.427,
+      "logAUC": -3.08,
+      "EF1": 0.69,
+      "EF5": 0.64
+    }
+  ],
+  "part2_scoring": [
+    {
+      "target": "FEN1",
+      "scoring": "vina",
+      "AUC": 0.553,
+      "logAUC": 2.35,
+      "EF1": 0.82
+    },
+    {
+      "target": "FEN1",
+      "scoring": "ad4_scoring",
+      "AUC": 0.415,
+      "logAUC": -2.94,
+      "EF1": 0.55
+    },
+    {
+      "target": "FEN1",
+      "scoring": "vinardo",
+      "AUC": 0.491,
+      "logAUC": 1.12,
+      "EF1": 1.92
+    },
+    {
+      "target": "VDR",
+      "scoring": "vina",
+      "AUC": 0.427,
+      "logAUC": -3.08,
+      "EF1": 0.69
+    },
+    {
+      "target": "VDR",
+      "scoring": "ad4_scoring",
+      "AUC": 0.37,
+      "logAUC": -5.71,
+      "EF1": 0.11
+    },
+    {
+      "target": "VDR",
+      "scoring": "vinardo",
+      "AUC": 0.451,
+      "logAUC": -2.48,
+      "EF1": 0.34
+    },
+    {
+      "target": "MAPK1",
+      "scoring": "vina",
+      "AUC": 0.658,
+      "logAUC": 6.92,
+      "EF1": 0.99
+    },
+    {
+      "target": "MAPK1",
+      "scoring": "ad4_scoring",
+      "AUC": 0.6,
+      "logAUC": 4.13,
+      "EF1": 1.32
+    },
+    {
+      "target": "MAPK1",
+      "scoring": "vinardo",
+      "AUC": 0.623,
+      "logAUC": 5.56,
+      "EF1": 1.65
+    },
+    {
+      "target": "PKM2",
+      "scoring": "vina",
+      "AUC": 0.633,
+      "logAUC": 7.2,
+      "EF1": 2.77
+    },
+    {
+      "target": "PKM2",
+      "scoring": "ad4_scoring",
+      "AUC": 0.596,
+      "logAUC": 3.0,
+      "EF1": 0.55
+    },
+    {
+      "target": "PKM2",
+      "scoring": "vinardo",
+      "AUC": 0.599,
+      "logAUC": 4.07,
+      "EF1": 1.11
+    },
+    {
+      "target": "ALDH1",
+      "scoring": "vina",
+      "AUC": 0.574,
+      "logAUC": 4.13,
+      "EF1": 2.03
+    },
+    {
+      "target": "ALDH1",
+      "scoring": "ad4_scoring",
+      "AUC": 0.571,
+      "logAUC": 3.55,
+      "EF1": 1.12
+    },
+    {
+      "target": "ALDH1",
+      "scoring": "vinardo",
+      "AUC": 0.547,
+      "logAUC": 2.61,
+      "EF1": 1.73
+    }
+  ],
+  "part2_top10": [
+    {
+      "target": "FEN1",
+      "random": 0.7,
+      "vina": 0,
+      "ad4_scoring": 2,
+      "vinardo": 1
+    },
+    {
+      "target": "VDR",
+      "random": 1.5,
+      "vina": 0,
+      "ad4_scoring": 1,
+      "vinardo": 0
+    },
+    {
+      "target": "MAPK1",
+      "random": 0.6,
+      "vina": 2,
+      "ad4_scoring": 2,
+      "vinardo": 1
+    },
+    {
+      "target": "PKM2",
+      "random": 1.0,
+      "vina": 3,
+      "ad4_scoring": 1,
+      "vinardo": 2
+    },
+    {
+      "target": "ALDH1",
+      "random": 1.7,
+      "vina": 2,
+      "ad4_scoring": 3,
+      "vinardo": 4
+    }
+  ],
+  "part3_ensemble": [
+    {
+      "target": "FEN1",
+      "n": 1312,
+      "actives": 355,
+      "AUC_xtal": 0.556,
+      "AUC_ens": 0.63,
+      "logAUC_xtal": 2.45,
+      "logAUC_ens": 9.52,
+      "EF1_xtal": 0.85,
+      "EF1_ens": 2.27,
+      "d_score": -0.65
+    },
+    {
+      "target": "VDR",
+      "n": 1878,
+      "actives": 881,
+      "AUC_xtal": 0.433,
+      "AUC_ens": 0.488,
+      "logAUC_xtal": -3.04,
+      "logAUC_ens": 0.02,
+      "EF1_xtal": 0.59,
+      "EF1_ens": 0.83,
+      "d_score": 0.88
+    },
+    {
+      "target": "MAPK1",
+      "n": 1307,
+      "actives": 308,
+      "AUC_xtal": 0.666,
+      "AUC_ens": 0.656,
+      "logAUC_xtal": 7.2,
+      "logAUC_ens": 6.71,
+      "EF1_xtal": 0.98,
+      "EF1_ens": 1.31,
+      "d_score": 0.75
+    },
+    {
+      "target": "ALDH1",
+      "n": 1992,
+      "actives": 998,
+      "AUC_xtal": 0.588,
+      "AUC_ens": 0.585,
+      "logAUC_xtal": 5.17,
+      "logAUC_ens": 4.76,
+      "EF1_xtal": 1.58,
+      "EF1_ens": 1.58,
+      "d_score": -0.12
+    }
+  ],
+  "part3b_loocv": [
+    {
+      "target": "FEN1",
+      "pct": "1%",
+      "K": 53,
+      "random": 3.6,
+      "vina": 3,
+      "ML": 6,
+      "EF_vina": 0.82,
+      "EF_ML": 1.65
+    },
+    {
+      "target": "FEN1",
+      "pct": "5%",
+      "K": 268,
+      "random": 18.4,
+      "vina": 25,
+      "ML": 21,
+      "EF_vina": 1.36,
+      "EF_ML": 1.14
+    },
+    {
+      "target": "VDR",
+      "pct": "1%",
+      "K": 58,
+      "random": 8.7,
+      "vina": 6,
+      "ML": 11,
+      "EF_vina": 0.69,
+      "EF_ML": 1.26
+    },
+    {
+      "target": "VDR",
+      "pct": "5%",
+      "K": 294,
+      "random": 44.1,
+      "vina": 28,
+      "ML": 66,
+      "EF_vina": 0.64,
+      "EF_ML": 1.5
+    },
+    {
+      "target": "MAPK1",
+      "pct": "1%",
+      "K": 52,
+      "random": 3.0,
+      "vina": 3,
+      "ML": 6,
+      "EF_vina": 0.99,
+      "EF_ML": 1.98
+    },
+    {
+      "target": "MAPK1",
+      "pct": "5%",
+      "K": 264,
+      "random": 15.3,
+      "vina": 31,
+      "ML": 26,
+      "EF_vina": 2.02,
+      "EF_ML": 1.69
+    },
+    {
+      "target": "PKM2",
+      "pct": "1%",
+      "K": 55,
+      "random": 5.4,
+      "vina": 15,
+      "ML": 10,
+      "EF_vina": 2.77,
+      "EF_ML": 1.85
+    },
+    {
+      "target": "PKM2",
+      "pct": "5%",
+      "K": 277,
+      "random": 27.3,
+      "vina": 61,
+      "ML": 32,
+      "EF_vina": 2.24,
+      "EF_ML": 1.17
+    },
+    {
+      "target": "ALDH1",
+      "pct": "1%",
+      "K": 59,
+      "random": 9.8,
+      "vina": 20,
+      "ML": 11,
+      "EF_vina": 2.03,
+      "EF_ML": 1.12
+    },
+    {
+      "target": "ALDH1",
+      "pct": "5%",
+      "K": 299,
+      "random": 49.8,
+      "vina": 81,
+      "ML": 59,
+      "EF_vina": 1.62,
+      "EF_ML": 1.18
+    }
+  ],
+  "part3a": {
+    "n_missed": 2250,
+    "n_rescued": 163,
+    "rescue_rate": 0.07,
+    "auc_all": 0.886,
+    "auc_rank_only": 0.713,
+    "auc_docking_only": 0.772,
+    "auc_chemistry_only": 0.848,
+    "rescue_by_target": {
+      "FEN1": 0.15,
+      "VDR": 0.08,
+      "MAPK1": 0.05,
+      "ALDH1": 0.05
+    },
+    "precision_pos": 0.41,
+    "recall_pos": 0.37
+  },
+  "pocket_rmsd_mean": {
+    "MAPK1": 0.51,
+    "FEN1": 0.75,
+    "VDR": 1.1,
+    "ALDH1": 1.15,
+    "PKM2": 3.13
+  },
+  "site_validation": {
+    "MAPK1": {
+      "site": 1,
+      "vol": 241.4,
+      "delta_A": 2.0
+    },
+    "PKM2": {
+      "site": 3,
+      "vol": 922.3,
+      "delta_A": 2.5
+    },
+    "VDR": {
+      "site": 1,
+      "vol": 457.3,
+      "delta_A": 3.9
+    },
+    "FEN1": {
+      "site": null,
+      "vol": 46.5,
+      "delta_A": 11.0
+    },
+    "ALDH1": {
+      "site": null,
+      "vol": 642,
+      "delta_A": 17.6
+    }
+  },
+  "fen1_mg": {
+    "with": {
+      "AUC": 0.553,
+      "logAUC": 2.35,
+      "EF1": 0.82
+    },
+    "without": {
+      "AUC": 0.544,
+      "logAUC": 1.53,
+      "EF1": 1.37
+    },
+    "per_ligand_score_corr": 0.47
+  },
+  "vdr_size_bias": {
+    "actives_HAC": 23.0,
+    "inactives_HAC": 25.2,
+    "top50_HAC": 32.3,
+    "corr_score_HAC": -0.321
+  }
+}
