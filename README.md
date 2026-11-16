@@ -1,5 +1,5 @@
 # Benchmarking-AutoDock-Vina-against-alternative-scoring-functions-and-AlphaFold-ensembles-on-LIT-PCBA
-A virtual-screening benchmark across five protein targets, run end to end on Google Colab. The question underneath all of it: **when AutoDock Vina fails to find the actives, what is actually to blame — the scoring function, the receptor structure, or the ligands themselves?
+A virtual-screening benchmark across five protein targets, run end to end on Google Colab. The question underneath all of it: **when AutoDock Vina fails to find the actives, what is actually to blame — the scoring function, the receptor structure, or the ligands themselves?**
 
 Everything here was produced in a single week on a Colab T4. All code is in `docking.ipynb`,
 all numbers in `RESULTS/`, all figures in `FIGURES/`.
@@ -94,36 +94,44 @@ scores a binding event. It knows nothing about the direction of the pharmacology
  
 ```
 .
-├── README.md                       ← you are here
-├── ASSUMPTIONS.md                  ← the substitutions above, standalone
-├── notebook.ipynb                  ← the full pipeline, top to bottom
+├── README.md                         ← you are here
+├── docking.ipynb                     ← the full pipeline, top to bottom
 │
 ├── RESULTS/
-│   ├── part1_enrichment.csv        ← headline Part 1 table, 5 targets
-│   ├── part2_scoring_comparison.csv← vina / ad4 / vinardo × 5 targets
-│   ├── part2_top10_hits.csv        ← actives found in each function's top 10
+│   │   ── headline tables ──
+│   ├── part1_enrichment.csv          ← Part 1 enrichment, 5 targets
+│   ├── part2_scoring_comparison.csv  ← vina / ad4 / vinardo × 5 targets
+│   ├── part2_top10_hits.csv          ← actives in each function's top 10
 │   ├── part3_crystal_vs_ensemble.csv ← crystal vs AF2 ensemble, 4 targets
-│   ├── part3a_false_negatives.csv  ← per-ligand rescue labels + descriptors
-│   ├── part3b_loocv.csv            ← leave-one-target-out re-ranking
-│   ├── key_results.json            ← every headline number in one file
-│   ├── top10_all_targets.csv       ← top 10 by Vina for each target
+│   ├── part3a_false_negatives.csv    ← per-ligand rescue labels + descriptors
+│   ├── part3b_loocv.csv              ← leave-one-target-out re-ranking
+│   ├── top10_all_targets.csv         ← top 10 by Vina for each target
+│   ├── key_results.json              ← every headline number in one file
 │   │
-│   ├── {TARGET}_vina_scores.csv    ← mol_id, label, vina        (crystal docking)
-│   ├── {TARGET}_ad4_scoring.csv    ← lig index, ad4 score       (rescoring)
-│   ├── {TARGET}_vinardo.csv        ← lig index, vinardo score   (rescoring)
-│   ├── {TARGET}_all_scores.csv     ← the three above, joined
-│   ├── {TARGET}_part3_scores.csv   ← ensemble docking scores
-│   ├── {TARGET}_descriptors.csv    ← RDKit descriptors per ligand
-│   └── {TARGET}_ligands.csv       ← mol_id, smiles, label (the docked set)
+│   │   ── per target: FEN1, VDR, MAPK1, PKM2, ALDH1 ──
+│   ├── {TARGET}_ligands.csv          ← mol_id, smiles, label (the docked set)
+│   ├── {TARGET}_vina_scores.csv      ← mol_id, label, vina   (crystal docking)
+│   ├── {TARGET}_ad4_scoring.csv      ← lig index, ad4 score  (rescoring)
+│   ├── {TARGET}_vinardo.csv          ← lig index, vinardo    (rescoring)
+│   ├── {TARGET}_all_scores.csv       ← the three above, joined
+│   ├── {TARGET}_part3_scores.csv     ← ensemble docking scores (no PKM2)
+│   └── FEN1_descriptors.csv          ← RDKit descriptors (FEN1 only)
 │
 └── FIGURES/
-    ├── fig1_part1_enrichment.png   ← ROC curves + logAUC bars
-    ├── fig2_part2_scoring.png      ← scoring functions compared
-    ├── fig3_size_bias.png          ← the VDR size-bias diagnosis
-    ├── fig4_part3_ensemble.png     ← crystal vs ensemble + flexibility
-    ├── fig5_part3a_classifier.png  ← rescue prediction + ablation
-    └── fig6_part3b_loocv.png       ← LOOCV re-ranking
+    ├── fig1_part1_enrichment.png     ← ROC curves + logAUC bars
+    ├── fig2_part2_scoring.png        ← scoring functions compared
+    ├── fig3_size_bias.png            ← the VDR size-bias diagnosis
+    ├── fig4_part3_ensemble.png       ← crystal vs ensemble + flexibility
+    ├── fig5_part3a_classifier.png    ← rescue prediction + ablation
+    └── fig6_part3b_loocv.png         ← LOOCV re-ranking
 ```
+
+`summary_part1.csv` and `part3_summary.csv` are earlier duplicates of
+`part1_enrichment.csv` and `part3_crystal_vs_ensemble.csv` respectively, kept
+only so nothing already linked breaks.
+
+`{TARGET}_part3_scores.csv` exists for four targets; PKM2 was excluded from
+Part 3 (see below).
  
 ### How the files connect
  
@@ -645,7 +653,7 @@ binders do the thing you want is a question for an assay.
  
 ## Reproducing this
  
-Open `notebook.ipynb` in Colab, **set the runtime to GPU (T4)** — not TPU — and mount Drive.
+Open `docking.ipynb` in Colab, **set the runtime to GPU (T4)** — not TPU — and mount Drive.
 Every cell that depends on a prior stage re-reads from Drive, so the notebook survives runtime
 disconnects, which it needed to several times.
  
