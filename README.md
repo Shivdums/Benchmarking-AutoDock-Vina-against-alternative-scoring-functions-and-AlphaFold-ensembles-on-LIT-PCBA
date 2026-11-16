@@ -113,7 +113,8 @@ scores a binding event. It knows nothing about the direction of the pharmacology
 │   ├── {TARGET}_vinardo.csv        ← lig index, vinardo score   (rescoring)
 │   ├── {TARGET}_all_scores.csv     ← the three above, joined
 │   ├── {TARGET}_part3_scores.csv   ← ensemble docking scores
-│   └── {TARGET}_descriptors.csv    ← RDKit descriptors per ligand
+│   ├── {TARGET}_descriptors.csv    ← RDKit descriptors per ligand
+│   └── {TARGET}_ligands.csv       ← mol_id, smiles, label (the docked set)
 │
 └── FIGURES/
     ├── fig1_part1_enrichment.png   ← ROC curves + logAUC bars
